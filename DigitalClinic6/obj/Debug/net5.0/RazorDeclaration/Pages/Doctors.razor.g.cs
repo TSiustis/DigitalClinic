@@ -13,98 +13,98 @@ namespace DigitalClinic6.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 1 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 2 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 3 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 4 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 5 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 6 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 7 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 8 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 9 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 10 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using DigitalClinic6;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 11 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using DigitalClinic6.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 12 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\_Imports.razor"
+#line 13 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
 using Radzen;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\Pages\Doctors.razor"
+#line 4 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\Pages\Doctors.razor"
 using DigitalClinic6.Models;
 
 #line default
@@ -119,7 +119,7 @@ using DigitalClinic6.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\siust\source\repos\DigitalClinic6\DigitalClinic6\Pages\Doctors.razor"
+#line 43 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\Pages\Doctors.razor"
        
     private List<Doctor> DoctorList = new List<Doctor>();
 

@@ -1,0 +1,14 @@
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\DigitalClinic.Shared.deps.json
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\DigitalClinic.Shared.runtimeconfig.json
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\DigitalClinic.Shared.runtimeconfig.dev.json
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\DigitalClinic.Shared.dll
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\ref\DigitalClinic.Shared.dll
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\bin\Debug\net5.0\DigitalClinic.Shared.pdb
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.AssemblyInfoInputs.cache
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.AssemblyInfo.cs
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.csproj.CoreCompileInputs.cache
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.dll
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\ref\DigitalClinic.Shared.dll
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.pdb
+C:\Users\saman\source\repos\DigitalClinic\DigitalClinic.Shared\obj\Debug\net5.0\DigitalClinic.Shared.genruntimeconfig.cache
