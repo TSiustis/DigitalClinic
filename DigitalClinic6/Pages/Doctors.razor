@@ -1,0 +1,78 @@
+﻿
+@page "/Doctors"
+
+@using DigitalClinic6.Models
+
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime js
+
+<h3>All Doctors</h3>
+
+@if (DoctorList.Count == 0)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Available balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in DoctorList)
+            {
+               <tr>
+                   <td>@doctor.Name</td>
+                   <td>@doctor.Speciality</td>
+                   <td>@doctor.Address</td>
+                   <td>@doctor.Distance</td>
+               </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/api/Doctor/CreateDoctor">Create an Account</a>
+}
+
+
+
+@code {
+    private List<Doctor> DoctorList = new List<Doctor>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        DoctorList = await Http.GetFromJsonAsync<List<Doctor>>("api/Doctor/GetAllDoctors");
+    }
+
+    public async Task DeleteAccount(int? id)
+    {
+        bool confirm = await js.InvokeAsync<bool>("confirm", "Do you want to delete this account?");
+        if (confirm)
+        {
+            var response = await Http.DeleteAsync($"/api/Doctor/Delete/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseText = await response.Content.ReadAsStringAsync();
+
+                if (responseText == "Doctor deleted successfully")
+                {
+                    NavigationManager.NavigateTo("/");
+                }
+                else
+                {
+                    NavigationManager.NavigateTo("/");
+                }
+            }
+            else
+            {
+                NavigationManager.NavigateTo("/");
+            }
+        }
+    }
+}
+

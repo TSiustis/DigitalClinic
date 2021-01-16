@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalClinic6", "DigitalClinic6\DigitalClinic6.csproj", "{90093706-7C20-4083-8583-3FFF4194A585}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D1465CAB-1915-4688-B903-E5B2433710D7} = {D1465CAB-1915-4688-B903-E5B2433710D7}
+		{A06F71F8-E378-4ACE-A857-68A449604762} = {A06F71F8-E378-4ACE-A857-68A449604762}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalClinic.Server", "..\TSiustis\DigitalClinic\DigitalClinic.Server\DigitalClinic.Server.csproj", "{A06F71F8-E378-4ACE-A857-68A449604762}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalClinic.Shared", "..\TSiustis\DigitalClinic\DigitalClinic.Shared\DigitalClinic.Shared.csproj", "{D1465CAB-1915-4688-B903-E5B2433710D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90093706-7C20-4083-8583-3FFF4194A585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90093706-7C20-4083-8583-3FFF4194A585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90093706-7C20-4083-8583-3FFF4194A585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90093706-7C20-4083-8583-3FFF4194A585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06F71F8-E378-4ACE-A857-68A449604762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06F71F8-E378-4ACE-A857-68A449604762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06F71F8-E378-4ACE-A857-68A449604762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06F71F8-E378-4ACE-A857-68A449604762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1465CAB-1915-4688-B903-E5B2433710D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1465CAB-1915-4688-B903-E5B2433710D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1465CAB-1915-4688-B903-E5B2433710D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1465CAB-1915-4688-B903-E5B2433710D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BA2E8D8-3807-4BA6-A832-3993CAE07D18}
+	EndGlobalSection
+EndGlobal

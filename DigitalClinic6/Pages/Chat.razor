@@ -1,0 +1,20 @@
+﻿@*@page "/chat"
+<div class="row">
+    <div class="col-md-4"><h1>My Online Doctors</h1></div>
+    <div class="col-md-8"><a href="#">Show All</a></div>
+    <ul class="list-group list-group-horizontal">
+        @foreach (var item in Doctors)
+        {
+            <li class="list-group-item"><img src=@item.Image/></li>
+        }
+    </ul>
+</div>
+<div class="row">
+    <h1>Chats</h1>
+    <ul class="list-group">
+        @foreach (var item in Doctors)
+        {
+            <li class="list-group-item"><img src=@item.Image /></li>
+        }
+    </ul>
+</div>*@
