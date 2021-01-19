@@ -19,6 +19,44 @@ namespace DigitalClinic.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
+            modelBuilder.Entity("DigitalClinic.Shared.Models.Appointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fees")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReasonForVisit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeAllocated")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Upcoming")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset>("VisitDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("VisitTiming")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VisitType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Apppointment");
+                });
+
             modelBuilder.Entity("DigitalClinic.Shared.Models.Clinic", b =>
                 {
                     b.Property<int>("Id")
@@ -393,10 +431,12 @@ namespace DigitalClinic.Server.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -433,10 +473,12 @@ namespace DigitalClinic.Server.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -444,6 +486,15 @@ namespace DigitalClinic.Server.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DigitalClinic.Shared.Models.Appointment", b =>
+                {
+                    b.HasOne("DigitalClinic.Shared.Models.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId");
+
+                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("DigitalClinic.Shared.Models.Doctor", b =>

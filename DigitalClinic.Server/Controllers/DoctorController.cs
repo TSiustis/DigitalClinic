@@ -10,7 +10,7 @@ namespace DigitalClinic.Server.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class DoctorController : Controller
+    public class DoctorController : ControllerBase
     {
         private readonly IDoctorRepository _doctorRepository;
 

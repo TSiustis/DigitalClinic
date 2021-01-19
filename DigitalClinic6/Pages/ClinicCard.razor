@@ -1,5 +1,38 @@
-﻿<h3>ClinicCard</h3>
+﻿@using DigitalClinic6.Models;
+@inject HttpClient Http
+<RadzenCard Style="width:45%; margin: 0 auto; margin-bottom:10px; height:25%;">
+    <div class="row">
+        <div class="col-md-2">
+            <RadzenImage Path="@clinic.Image" Style="width:100px;" />
+        </div>
+        <div class="col-md-5">
+            <h1>@clinic.Name</h1>
+            <h2>@clinic.Address</h2>
+            <p>@clinic.Distance  </p>
+            <hr />
+        </div>
+        <div class="col-md-5">
+            <p class="oi oi-star">@clinic.Rating</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#"> Call</a>
+        </div>
+        <div class="col-md-5">
+            <a href="#" class="oi oi-calendar">Appointment</a>
+        </div>
 
+        @* <Map Zoom="10" Markers="MapMarkers"></Map>*@
+    </div>
+
+</RadzenCard>
 @code {
+    [Parameter]
+    public Clinic clinic { get; set; } = new Clinic();
+    protected override async Task OnInitializedAsync()
+    {
+       // clinic = await Http.GetFromJsonAsync<Clinic>("api/Clinic/GetClinicById/1");
+    }
 
 }

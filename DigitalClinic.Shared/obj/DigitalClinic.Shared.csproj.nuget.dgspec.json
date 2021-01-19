@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saman\\source\\repos\\DigitalClinic\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj": {}
+    "C:\\Users\\siust\\OneDrive\\Desktop\\DigitalClinic-develop\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saman\\source\\repos\\DigitalClinic\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj": {
+    "C:\\Users\\siust\\OneDrive\\Desktop\\DigitalClinic-develop\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saman\\source\\repos\\DigitalClinic\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\siust\\OneDrive\\Desktop\\DigitalClinic-develop\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj",
         "projectName": "DigitalClinic.Shared",
-        "projectPath": "C:\\Users\\saman\\source\\repos\\DigitalClinic\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj",
-        "packagesPath": "C:\\Users\\saman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saman\\source\\repos\\DigitalClinic\\DigitalClinic.Shared\\obj\\",
+        "projectPath": "C:\\Users\\siust\\OneDrive\\Desktop\\DigitalClinic-develop\\DigitalClinic.Shared\\DigitalClinic.Shared.csproj",
+        "packagesPath": "C:\\Users\\siust\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\siust\\OneDrive\\Desktop\\DigitalClinic-develop\\DigitalClinic.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\saman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\siust\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -106,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

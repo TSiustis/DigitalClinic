@@ -19,5 +19,7 @@ namespace DigitalClinic.Server.Data
         public DbSet<ClinicUser> ClinicUsers { get; set; }
         public DbSet<Message> Message { get; set; }
         public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<Appointment> Apppointment { get;  set; }
+        public DbSet<Location> Location { get;  set; }
     }
 }

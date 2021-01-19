@@ -13,96 +13,104 @@ namespace DigitalClinic6.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 1 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 2 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 3 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 4 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 5 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 6 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 7 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 8 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 9 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 10 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using DigitalClinic6;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 11 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using DigitalClinic6.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 12 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 13 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Radzen;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\Pages\Clinics.razor"
+using DigitalClinic6.Models;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Clinics")]
     public partial class Clinics : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -110,6 +118,29 @@ using Radzen;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 41 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\Pages\Clinics.razor"
+        string SearchTerm { get; set; } = "";
+    private List<Clinic> ClinicList = new List<Clinic>();
+    List<Clinic> query = new List<Clinic>();
+    protected override async Task OnInitializedAsync()
+    {
+
+        query = await Http.GetFromJsonAsync<List<Clinic>>("api/Clinics/GetAllClinics");
+        ClinicList = query;
+
+    }
+    async Task SearchClinics()
+    {
+        ClinicList = query.Where(i => i.Name.ToLower().Contains(SearchTerm.ToLower())).ToList();
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime js { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

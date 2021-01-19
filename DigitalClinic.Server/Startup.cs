@@ -32,6 +32,9 @@ namespace DigitalClinic.Server
             services.AddRazorPages();
             services.AddControllers();
             services.AddTransient<IDoctorRepository, DoctorRepository>();
+            services.AddTransient<IAppointmentRepository, AppointmentRepository>();
+            services.AddTransient<IClinicRepository, ClinicRepository>();
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors(options =>
             {
@@ -47,11 +50,11 @@ namespace DigitalClinic.Server
             services.AddDefaultIdentity<ClinicUser>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            //services.AddIdentityServer()
-            //    .AddApiAuthorization<ClinicUser, ApplicationDbContext>();
+            services.AddIdentityServer()
+                .AddApiAuthorization<ClinicUser, ApplicationDbContext>();
 
-            //services.AddAuthentication()
-            //    .AddIdentityServerJwt();
+            services.AddAuthentication()
+                .AddIdentityServerJwt();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +72,7 @@ namespace DigitalClinic.Server
             app.UseRouting();
 
             app.UseAuthentication();
-         // app.UseIdentityServer();
+          app.UseIdentityServer();
             app.UseAuthorization();
 
 

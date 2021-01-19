@@ -13,98 +13,98 @@ namespace DigitalClinic6.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 1 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 2 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 3 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 4 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 5 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 6 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 7 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 8 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 9 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 10 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using DigitalClinic6;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 11 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using DigitalClinic6.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 12 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\_Imports.razor"
+#line 13 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\_Imports.razor"
 using Radzen;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\Pages\Doctors.razor"
+#line 4 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\Pages\Doctors.razor"
 using DigitalClinic6.Models;
 
 #line default
@@ -119,41 +119,22 @@ using DigitalClinic6.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\saman\source\repos\DigitalClinic\DigitalClinic6\Pages\Doctors.razor"
-       
-    private List<Doctor> DoctorList = new List<Doctor>();
+#line 52 "C:\Users\siust\OneDrive\Desktop\DigitalClinic-develop\DigitalClinic6\Pages\Doctors.razor"
+                        string SearchTerm { get; set; } = "";
+                        private List<Doctor> DoctorList = new List<Doctor>();
+                            List<Doctor> query = new List<Doctor>();
+                            protected override async Task OnInitializedAsync()
+                            {
 
-    protected override async Task OnInitializedAsync()
-    {
-        DoctorList = await Http.GetFromJsonAsync<List<Doctor>>("api/Doctor/GetAllDoctors");
-    }
+                                query = await Http.GetFromJsonAsync<List<Doctor>>("api/Doctor/GetAllDoctors");
+                                DoctorList = query;
 
-    public async Task DeleteAccount(int? id)
-    {
-        bool confirm = await js.InvokeAsync<bool>("confirm", "Do you want to delete this account?");
-        if (confirm)
-        {
-            var response = await Http.DeleteAsync($"/api/Doctor/Delete/{id}");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var responseText = await response.Content.ReadAsStringAsync();
-
-                if (responseText == "Doctor deleted successfully")
-                {
-                    NavigationManager.NavigateTo("/");
-                }
-                else
-                {
-                    NavigationManager.NavigateTo("/");
-                }
-            }
-            else
-            {
-                NavigationManager.NavigateTo("/");
-            }
-        }
-    }
+                            }
+                            async Task SearchDoctors()
+                            {
+                                DoctorList = query.Where(i => i.Name.ToLower().Contains(SearchTerm.ToLower())).ToList();
+                            }
+                
 
 #line default
 #line hidden

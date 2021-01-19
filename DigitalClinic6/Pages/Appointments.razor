@@ -1,0 +1,52 @@
+﻿@page "/Appointments"
+
+@using DigitalClinic6.Models
+
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime js
+
+<h3>All Appointments</h3>
+
+@if (AppointmentList.Count == 0)
+{
+<p><em>Loading...</em></p> }
+else
+{
+
+
+<form class="navbar-form navbar-left">
+    <div class="form-group">
+        <input @bind-value="SearchTerm" class="col-8" @bind-value:event="oninput" />
+        <button type="button" class="btn btn-primary btn-lg pull-right" @onclick="@SearchAppointments"><span class="oi oi-zoom-in"></span></button>
+    </div>
+</form>
+                <table class="table">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                        @foreach (var Appointment in AppointmentList)
+                        {
+        <AppointmentCard Appointment="@Appointment" />}
+
+                    </tbody>
+                </table>}
+
+
+@code { string SearchTerm { get; set; } = "";
+    private List<Appointment> AppointmentList = new List<Appointment>();
+    List<Appointment> query = new List<Appointment>();
+    protected override async Task OnInitializedAsync()
+    {
+
+        query = await Http.GetFromJsonAsync<List<Appointment>>("api/Appointment/GetAllAppointments");
+        AppointmentList = query;
+
+    }
+    async Task SearchAppointments()
+    {
+        AppointmentList = query.Where(i => i.Doctor.Name.ToLower().Contains(SearchTerm.ToLower())).ToList();
+    }
+}

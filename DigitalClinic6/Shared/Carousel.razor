@@ -6,15 +6,15 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner justify-content-center">
         <div class="carousel-item active">
-            <img class="d-block " src="/img/doctor-1.jpg" alt="First slide">
+            <img class="d-block w-50 justify-content-center" src="/img/doctor-1.jpg" alt="First slide">
         </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="/img/doctor-2.jpg" alt="Second slide">
+        <div class="carousel-item justify-content-center">
+            <img class="d-block w-50 justify-content-center" src="/img/doctor-2.jpg" alt="Second slide">
         </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="/img/doctor-3.jpg" alt="Third slide">
+        <div class="carousel-item justify-content-center">
+            <img class="d-block w-50 " src="/img/doctor-3.jpg" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" id="carouselExampleIndicators-prev" role="button" data-slide="prev">
@@ -26,7 +26,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-@*@{
+@code{
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
          firstRender = true;
@@ -37,4 +37,4 @@
             firstRender = false;
         }
     }
-}*@
+}

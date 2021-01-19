@@ -1,5 +1,55 @@
-﻿<h3>Clinics</h3>
+﻿@page "/Clinics"
 
-@code {
+@using DigitalClinic6.Models
 
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime js
+
+<h3>All Clinics</h3>
+
+@if (ClinicList.Count == 0)
+{
+<p><em>Loading...</em></p> }
+else
+{
+
+
+<form class="navbar-form navbar-left">
+    <div class="form-group">
+        <input @bind-value="SearchTerm" class="col-8" @bind-value:event="oninput" />
+        <button type="button" class="btn btn-primary btn-lg pull-right" @onclick="@SearchClinics"><span class="oi oi-zoom-in"></span></button>
+    </div>
+</form>
+                <table class="table">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                        @foreach (var clinic in ClinicList)
+                        {
+                           <ClinicCard clinic="@clinic" />
+                        }
+
+                    </tbody>
+                </table>
+
+}
+
+
+@code { string SearchTerm { get; set; } = "";
+    private List<Clinic> ClinicList = new List<Clinic>();
+    List<Clinic> query = new List<Clinic>();
+    protected override async Task OnInitializedAsync()
+    {
+
+        query = await Http.GetFromJsonAsync<List<Clinic>>("api/Clinics/GetAllClinics");
+        ClinicList = query;
+
+    }
+    async Task SearchClinics()
+    {
+        ClinicList = query.Where(i => i.Name.ToLower().Contains(SearchTerm.ToLower())).ToList();
+    }
 }

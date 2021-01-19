@@ -11,7 +11,6 @@ namespace DigitalClinic6.Models
     {
         public string  Password { get; set; }
         public string Mobile { get; set; }
-        public string  Name { get; set; }
         public string  ImageUrl { get; set; }
         public string ApiToken { get; set; }
     

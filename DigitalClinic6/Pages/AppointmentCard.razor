@@ -1,0 +1,39 @@
+﻿@using DigitalClinic6.Models;
+@inject HttpClient Http
+<RadzenCard Style="width:45%; margin: 0 auto; margin-bottom:10px; height:25%;">
+    <div class="row">
+        <div class="col-md-2">
+            <RadzenImage Path="@appointment.Doctor.Image" Style="width:100px;" />
+        </div>
+        <div class="col-md-5">
+            <h1>@appointment.Doctor.Name</h1>
+            <h2>@appointment.Doctor.Address</h2>
+            <p>@appointment.Doctor.Distance km </p>
+            <p>@appointment.VisitTiming</p>
+            <hr />
+        </div>
+        <div class="col-md-5">
+            <p>Duration: @appointment.TimeAllocated minutes</p>
+            <p class="oi oi-star">@appointment.Doctor.Rating</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#" class="oi oi-phone"> Reschedule</a>
+        </div>
+        
+
+    </div>
+
+</RadzenCard>
+@code {
+    [Parameter]
+    public Appointment appointment { get; set; } = new Appointment();
+
+    protected override async Task OnInitializedAsync()
+    {
+        appointment.Doctor = new Doctor();
+        appointment = await Http.GetFromJsonAsync<Appointment>("api/Appointment/GetAppointmentById/1");
+    }
+
+}
